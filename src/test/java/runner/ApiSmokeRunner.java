@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(features = "src/test/resources/features/Smoke",
         glue = "apiStepDefinition",
-        plugin = {"pretty", "html:target/cucumber-html-report", "rerun:src/test/resources/projectFailedReport/failed-API-Report/failed.txt"},
+        plugin = {"pretty","html:target/cucumber-html-report.html",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/extent-report/index.html",
+                "rerun:src/test/resources/projectFailedReport/failed-API-Report/failed.txt"},
         monochrome = true,
         tags = "@Smoke")
 

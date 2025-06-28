@@ -1,5 +1,5 @@
-C:\Projects\bookstore-api\bookstore-api\src\test\java\apiStepDefinition\BookManagementTest.java
-C:\Projects\bookstore-api\bookstore-api\src\test\java\runner\ApiSmokeRunner.java
-C:\Projects\bookstore-api\bookstore-api\src\test\java\apiObjectRepository\ApiPage.java
-C:\Projects\bookstore-api\bookstore-api\src\test\java\apiAssertions\JsonResponseAssertion.java
-C:\Projects\bookstore-api\bookstore-api\src\test\java\runner\ApiRegressionRunner.java
+C:\Projects\Book\BookStore\src\test\java\apiObjectRepository\ApiPage.java
+C:\Projects\Book\BookStore\src\test\java\apiAssertions\JsonResponseAssertion.java
+C:\Projects\Book\BookStore\src\test\java\apiStepDefinition\BookManagementTest.java
+C:\Projects\Book\BookStore\src\test\java\runner\ApiRegressionRunner.java
+C:\Projects\Book\BookStore\src\test\java\runner\ApiSmokeRunner.java

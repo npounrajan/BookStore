@@ -8,9 +8,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -24,6 +29,7 @@ public class BookManagementTest {
     private static String bookId;
     public ApiPage apiPage;
     public JsonResponseAssertion jsonResponseAssertion;
+    private RequestSpecification request;
 
 
     public BookManagementTest() {
@@ -35,7 +41,6 @@ public class BookManagementTest {
     @Given("the API is running")
     public void the_api_is_running() {
         RestAssured.baseURI = "http://localhost:8090";
-//            RestAssured.baseURI =bookStoreConfiguration.getApiUrl();
     }
 
     @Given("I have a valid authentication token")
@@ -122,4 +127,5 @@ public class BookManagementTest {
 
         jsonResponseAssertion.verifyBookPrice(response,Integer.parseInt(price));
     }
+
 }
