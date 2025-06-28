@@ -1,0 +1,5 @@
+apiObjectRepository\ApiPage.class
+apiStepDefinition\BookManagementTest.class
+runner\ApiSmokeRunner.class
+apiAssertions\JsonResponseAssertion.class
+runner\ApiRegressionRunner.class

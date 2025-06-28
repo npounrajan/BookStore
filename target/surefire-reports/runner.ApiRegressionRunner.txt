@@ -1,0 +1,203 @@
+-------------------------------------------------------------------------------
+Test set: runner.ApiRegressionRunner
+-------------------------------------------------------------------------------
+Tests run: 35, Failures: 11, Errors: 6, Skipped: 0, Time elapsed: 5.797 sec <<< FAILURE! - in runner.ApiRegressionRunner
+Create a book without a price(Create a new book)  Time elapsed: 0.027 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.trim()" because "in" is null
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)
+	at apiStepDefinition.BookManagementTest.i_send_a_post_request_with(BookManagementTest.java:49)
+	at ✽.I send a POST request to "/books/" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:49)
+
+Create a book with negative price(Create a new book)  Time elapsed: 0.046 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <201>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:60)
+
+Create a book with non-numeric price(Create a new book)  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NumberFormatException: For input string: "free"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)
+	at apiStepDefinition.BookManagementTest.i_send_a_post_request_with(BookManagementTest.java:49)
+	at ✽.I send a POST request to "/books/" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:64)
+
+Create a book with empty title(Create a new book)  Time elapsed: 0.048 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <201>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:74)
+
+Create a book with empty author(Create a new book)  Time elapsed: 0.044 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <201>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:81)
+
+Send request with incorrect content type(Create a new book)  Time elapsed: 0.013 sec  <<< ERROR!
+io.cucumber.core.exception.CucumberException: Step [I send a POST request to {string} with content type {string} and body:] is defined with 2 parameters at 'apiStepDefinition.BookManagementTest.iSendAPOSTRequestToWithContentTypeAndBody(java.lang.String,java.lang.String)'.
+However, the gherkin step has 3 arguments:
+ * "/books/"
+ * "text/plain"
+ * DocString:
+      """null
+      title=The Alchemist&author=Paulo Coelho&price=399.0
+      """
+Step text: I send a POST request to "/books/" with content type "text/plain" and body:
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.arityMismatch(PickleStepDefinitionMatch.java:134)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:42)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:49)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:51)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:66)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+Create a book with duplicate title and author(Create a new book)  Time elapsed: 0.081 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <409>
+     but: was <201>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 409(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:104)
+
+Delete a book with empty ID(Delete a book by ID)  Time elapsed: 0.049 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <405>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/DeleteBook.feature:41)
+
+Verify response contains price field as well(Get a book by ID)  Time elapsed: 0.05 sec  <<< ERROR!
+java.lang.NumberFormatException: For input string: "price"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at apiStepDefinition.BookManagementTest.theResponseShouldContainField(BookManagementTest.java:123)
+	at ✽.the response should contain field "price"(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/GetAllBooks.feature:24)
+
+Retrieve a book with missing ID(Get a book by ID)  Time elapsed: 0.036 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <405>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 405(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/GetAllBooks.feature:39)
+
+Retrieve a book with empty ID(Get a book by ID)  Time elapsed: 0.034 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/GetAllBooks.feature:44)
+
+Update book with missing title field(Update an existing book)  Time elapsed: 0.055 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:52)
+
+Update book with missing author field(Update an existing book)  Time elapsed: 0.046 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:59)
+
+Update book with missing price field(Update an existing book)  Time elapsed: 0.025 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.trim()" because "in" is null
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)
+	at apiStepDefinition.BookManagementTest.i_send_a_put_request_with(BookManagementTest.java:61)
+	at ✽.I send a PUT request to "/books/{bookId}" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:63)
+
+Update book with empty title(Update an existing book)  Time elapsed: 0.039 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:73)
+
+Update book with negative price(Update an existing book)  Time elapsed: 0.038 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <400>
+     but: was <200>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)
+	at apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)
+	at ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:80)
+
+Update book with non-numeric price(Update an existing book)  Time elapsed: 0.027 sec  <<< ERROR!
+java.lang.NumberFormatException: For input string: "forty"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)
+	at apiStepDefinition.BookManagementTest.i_send_a_put_request_with(BookManagementTest.java:61)
+	at ✽.I send a PUT request to "/books/{bookId}" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:84)
+

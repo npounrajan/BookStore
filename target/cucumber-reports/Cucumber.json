@@ -1,0 +1,4614 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 473703200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:15.349Z",
+        "line": 10,
+        "name": "Successfully create a book with valid input",
+        "description": "",
+        "id": "create-a-new-book;successfully-create-a-book-with-valid-input",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2556644400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4987000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "the response status should be 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 29920100,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the response should contain:",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_response_should_contain(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "The Alchemist"
+                ]
+              },
+              {
+                "cells": [
+                  "author",
+                  "Paulo Coelho"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16968400,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I store the book ID",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_store_the_book_id()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.524Z",
+        "line": 21,
+        "name": "Create a book with special characters in title and author",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-with-special-characters-in-title-and-author",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 35903500,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "L\u0027étranger",
+                  "Albert Camus",
+                  "299.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "the response status should be 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22940100,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "the response should contain:",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_response_should_contain(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "L\u0027étranger"
+                ]
+              },
+              {
+                "cells": [
+                  "author",
+                  "Albert Camus"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 997600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.595Z",
+        "line": 31,
+        "name": "Create a book without a title",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-without-a-title",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 42903300,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "the response status should be 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9987700,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "Title in response should be null",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.titleInResponseShouldBeNull()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.660Z",
+        "line": 40,
+        "name": "Create a book without an author",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-without-an-author",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 49868600,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "the response status should be 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14958700,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Author in response should be null",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.authorInResponseShouldBeNull()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.733Z",
+        "line": 48,
+        "name": "Create a book without a price",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-without-a-price",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"String.trim()\" because \"in\" is null\r\n\tat java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838)\r\n\tat java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\r\n\tat java.base/java.lang.Double.parseDouble(Double.java:651)\r\n\tat apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)\r\n\tat apiStepDefinition.BookManagementTest.i_send_a_post_request_with(BookManagementTest.java:49)\r\n\tat ✽.I send a POST request to \"/books/\" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:49)\r\n",
+              "duration": 5975300,
+              "status": "failed"
+            },
+            "line": 49,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 52,
+            "name": "the response status should be 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 53,
+            "name": "Price in response should be 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 28
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.priceInResponseShouldBe(int)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 997400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.762Z",
+        "line": 56,
+        "name": "Create a book with negative price",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-with-negative-price",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 33911000,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "-10.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c201\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:60)\r\n",
+              "duration": 1995300,
+              "status": "failed"
+            },
+            "line": 60,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.805Z",
+        "line": 63,
+        "name": "Create a book with non-numeric price",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-with-non-numeric-price",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NumberFormatException: For input string: \"free\"\r\n\tat java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)\r\n\tat java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\r\n\tat java.base/java.lang.Double.parseDouble(Double.java:651)\r\n\tat apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)\r\n\tat apiStepDefinition.BookManagementTest.i_send_a_post_request_with(BookManagementTest.java:49)\r\n\tat ✽.I send a POST request to \"/books/\" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:64)\r\n",
+              "status": "failed"
+            },
+            "line": 64,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "free"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 67,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.813Z",
+        "line": 70,
+        "name": "Create a book with empty title",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-with-empty-title",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 39886000,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c201\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:74)\r\n",
+              "status": "failed"
+            },
+            "line": 74,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.861Z",
+        "line": 77,
+        "name": "Create a book with empty author",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-with-empty-author",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 36904400,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c201\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:81)\r\n",
+              "duration": 1011700,
+              "status": "failed"
+            },
+            "line": 81,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.905Z",
+        "line": 84,
+        "name": "Create a book with malformed JSON payload",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-with-malformed-json-payload",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 28920500,
+              "status": "passed"
+            },
+            "line": 85,
+            "name": "I send a malformed POST request to \"/books/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 35
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_malformed_post_request_to(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.941Z",
+        "line": 89,
+        "name": "Send request with incorrect content type",
+        "description": "",
+        "id": "create-a-new-book;send-request-with-incorrect-content-type",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "io.cucumber.core.exception.CucumberException: Step [I send a POST request to {string} with content type {string} and body:] is defined with 2 parameters at \u0027apiStepDefinition.BookManagementTest.iSendAPOSTRequestToWithContentTypeAndBody(java.lang.String,java.lang.String)\u0027.\nHowever, the gherkin step has 3 arguments:\n * \"/books/\"\n * \"text/plain\"\n * DocString:\n      \"\"\"null\n      title\u003dThe Alchemist\u0026author\u003dPaulo Coelho\u0026price\u003d399.0\n      \"\"\"\nStep text: I send a POST request to \"/books/\" with content type \"text/plain\" and body:\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.arityMismatch(PickleStepDefinitionMatch.java:134)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:42)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:49)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:51)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:66)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)\r\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)\r\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)\r\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)\r\n",
+              "duration": 2976200,
+              "status": "failed"
+            },
+            "line": 90,
+            "name": "I send a POST request to \"/books/\" with content type \"text/plain\" and body:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                },
+                {
+                  "val": "\"text/plain\"",
+                  "offset": 53
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.iSendAPOSTRequestToWithContentTypeAndBody(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When ",
+            "doc_string": {
+              "line": 91,
+              "value": "title\u003dThe Alchemist\u0026author\u003dPaulo Coelho\u0026price\u003d399.0"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 94,
+            "name": "the response status should be 415",
+            "match": {
+              "arguments": [
+                {
+                  "val": "415",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:18.953Z",
+        "line": 97,
+        "name": "Create a book with duplicate title and author",
+        "description": "",
+        "id": "create-a-new-book;create-a-book-with-duplicate-title-and-author",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 37896200,
+              "status": "passed"
+            },
+            "line": 98,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 35904000,
+              "status": "passed"
+            },
+            "line": 101,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c409\u003e\r\n     but: was \u003c201\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 409(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/CreateBook.feature:104)\r\n",
+              "status": "failed"
+            },
+            "line": 104,
+            "name": "the response status should be 409",
+            "match": {
+              "arguments": [
+                {
+                  "val": "409",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@createBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      }
+    ],
+    "name": "Create a new book",
+    "description": "",
+    "id": "create-a-new-book",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Regression/CreateBook.feature",
+    "tags": [
+      {
+        "name": "@regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@createBook",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 3
+        }
+      }
+    ]
+  },
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25930400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.034Z",
+        "line": 13,
+        "name": "Successfully delete a book by valid ID",
+        "description": "",
+        "id": "delete-a-book-by-id;successfully-delete-a-book-by-valid-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 25931500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I send a DELETE request to \"/books/{bookId}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the response status should be 204",
+            "match": {
+              "arguments": [
+                {
+                  "val": "204",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@deleteBook"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 997300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33909000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.101Z",
+        "line": 18,
+        "name": "Verify deleted book is no longer retrievable",
+        "description": "",
+        "id": "delete-a-book-by-id;verify-deleted-book-is-no-longer-retrievable",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12967500,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I send a DELETE request to \"/books/{bookId}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 13969300,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I send a GET request to \"/books/{bookId}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_get_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the response status should be 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@deleteBook"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 53854700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.167Z",
+        "line": 24,
+        "name": "Delete a book using non-existent ID",
+        "description": "",
+        "id": "delete-a-book-by-id;delete-a-book-using-non-existent-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9971300,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I send a DELETE request to \"/books/999999\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/999999\"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "the response status should be 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@deleteBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 997800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 996800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24936100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.236Z",
+        "line": 29,
+        "name": "Delete a book with invalid (non-numeric) ID",
+        "description": "",
+        "id": "delete-a-book-by-id;delete-a-book-with-invalid-(non-numeric)-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12966500,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "I send a DELETE request to \"/books/invalid-id\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/invalid-id\"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@deleteBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 999800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29919400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.281Z",
+        "line": 34,
+        "name": "Delete a book with missing ID",
+        "description": "",
+        "id": "delete-a-book-by-id;delete-a-book-with-missing-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11968800,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "I send a DELETE request to \"/books/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "the response status should be 405",
+            "match": {
+              "arguments": [
+                {
+                  "val": "405",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@deleteBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31913800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.329Z",
+        "line": 39,
+        "name": "Delete a book with empty ID",
+        "description": "",
+        "id": "delete-a-book-by-id;delete-a-book-with-empty-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10970900,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "I send a DELETE request to \"/books/ \"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/ \"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c405\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/DeleteBook.feature:41)\r\n",
+              "status": "failed"
+            },
+            "line": 41,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@deleteBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 996700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 30916500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.378Z",
+        "line": 44,
+        "name": "Delete the same book twice",
+        "description": "",
+        "id": "delete-a-book-by-id;delete-the-same-book-twice",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11968300,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "I send a DELETE request to \"/books/{bookId}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7978100,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "I send a DELETE request to \"/books/{bookId}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 27
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_delete_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 999900,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "the response status should be 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@deleteBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      }
+    ],
+    "name": "Delete a book by ID",
+    "description": "",
+    "id": "delete-a-book-by-id",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Regression/DeleteBook.feature",
+    "tags": [
+      {
+        "name": "@regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@deleteBook",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 3
+        }
+      }
+    ]
+  },
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21939000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.436Z",
+        "line": 13,
+        "name": "Successfully retrieve a book by valid ID",
+        "description": "",
+        "id": "get-a-book-by-id;successfully-retrieve-a-book-by-valid-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7980900,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I send a GET request to \"/books/{bookId}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_get_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the response status should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22935900,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the response should contain:",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_response_should_contain(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "The Alchemist"
+                ]
+              },
+              {
+                "cells": [
+                  "author",
+                  "Paulo Coelho"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@getAllBooks"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 997600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29922400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.498Z",
+        "line": 21,
+        "name": "Verify response contains price field as well",
+        "description": "",
+        "id": "get-a-book-by-id;verify-response-contains-price-field-as-well",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9973300,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I send a GET request to \"/books/{bookId}\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_get_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the response status should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.NumberFormatException: For input string: \"price\"\r\n\tat java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)\r\n\tat java.base/java.lang.Integer.parseInt(Integer.java:668)\r\n\tat java.base/java.lang.Integer.parseInt(Integer.java:786)\r\n\tat apiStepDefinition.BookManagementTest.theResponseShouldContainField(BookManagementTest.java:123)\r\n\tat ✽.the response should contain field \"price\"(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/GetAllBooks.feature:24)\r\n",
+              "status": "failed"
+            },
+            "line": 24,
+            "name": "the response should contain field \"price\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"price\"",
+                  "offset": 34
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.theResponseShouldContainField(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@getAllBooks"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 997700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 27927600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.547Z",
+        "line": 27,
+        "name": "Retrieve a book using non-existent ID",
+        "description": "",
+        "id": "get-a-book-by-id;retrieve-a-book-using-non-existent-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11964000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "I send a GET request to \"/books/999999\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/999999\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_get_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "the response status should be 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@getAllBooks"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 996400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 22937600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.593Z",
+        "line": 32,
+        "name": "Retrieve a book with invalid (non-numeric) ID",
+        "description": "",
+        "id": "get-a-book-by-id;retrieve-a-book-with-invalid-(non-numeric)-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9974000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "I send a GET request to \"/books/invalid-id\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/invalid-id\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_get_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 998200,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@getAllBooks"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 999900,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20943900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.632Z",
+        "line": 37,
+        "name": "Retrieve a book with missing ID",
+        "description": "",
+        "id": "get-a-book-by-id;retrieve-a-book-with-missing-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8976300,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "I send a GET request to \"/books/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_get_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c405\u003e\r\n     but: was \u003c200\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 405(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/GetAllBooks.feature:39)\r\n",
+              "status": "failed"
+            },
+            "line": 39,
+            "name": "the response status should be 405",
+            "match": {
+              "arguments": [
+                {
+                  "val": "405",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@getAllBooks"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21941200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.668Z",
+        "line": 42,
+        "name": "Retrieve a book with empty ID",
+        "description": "",
+        "id": "get-a-book-by-id;retrieve-a-book-with-empty-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7976700,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "I send a GET request to \"/books/ \"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/ \"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_get_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c200\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/GetAllBooks.feature:44)\r\n",
+              "status": "failed"
+            },
+            "line": 44,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@getAllBooks"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      }
+    ],
+    "name": "Get a book by ID",
+    "description": "",
+    "id": "get-a-book-by-id",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Regression/GetAllBooks.feature",
+    "tags": [
+      {
+        "name": "@regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@getAllBooks",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 3
+        }
+      }
+    ]
+  },
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 997700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24934500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.703Z",
+        "line": 13,
+        "name": "Successfully update a book with valid input",
+        "description": "",
+        "id": "update-an-existing-book;successfully-update-a-book-with-valid-input",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 19945000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "Alchemist 2.0",
+                  "Paulo Coelho",
+                  "450.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the response status should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 25930400,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the response should contain:",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_response_should_contain(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "Alchemist 2.0"
+                ]
+              },
+              {
+                "cells": [
+                  "author",
+                  "Paulo Coelho"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23944900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.785Z",
+        "line": 23,
+        "name": "Update only the title of the book",
+        "description": "",
+        "id": "update-an-existing-book;update-only-the-title-of-the-book",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12962900,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Legend",
+                  "Paulo Coelho",
+                  "450.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "the response status should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9976500,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "the response should contain:",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_response_should_contain(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "The Legend"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20941100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.837Z",
+        "line": 32,
+        "name": "Update with unicode characters in title",
+        "description": "",
+        "id": "update-an-existing-book;update-with-unicode-characters-in-title",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11971300,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "百年孤独 2.0",
+                  "Gabriel García",
+                  "500.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "the response status should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9970600,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "the response should contain:",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_response_should_contain(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "百年孤独 2.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Positive"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 36898800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.885Z",
+        "line": 41,
+        "name": "Update a non-existent book ID",
+        "description": "",
+        "id": "update-an-existing-book;update-a-non-existent-book-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18958600,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "I send a PUT request to \"/books/999999\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/999999\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "New Title",
+                  "Some Author",
+                  "300.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "the response status should be 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 32913600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:19.948Z",
+        "line": 48,
+        "name": "Update book with missing title field",
+        "description": "",
+        "id": "update-an-existing-book;update-book-with-missing-title-field",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 14959500,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "Paulo Coelho",
+                  "450.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c200\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:52)\r\n",
+              "duration": 997300,
+              "status": "failed"
+            },
+            "line": 52,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 998800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24931400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:20.003Z",
+        "line": 55,
+        "name": "Update book with missing author field",
+        "description": "",
+        "id": "update-an-existing-book;update-book-with-missing-author-field",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11966300,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "Alchemist 2.0",
+                  "450.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c200\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:59)\r\n",
+              "duration": 1995200,
+              "status": "failed"
+            },
+            "line": 59,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 18949100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:20.048Z",
+        "line": 62,
+        "name": "Update book with missing price field",
+        "description": "",
+        "id": "update-an-existing-book;update-book-with-missing-price-field",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"String.trim()\" because \"in\" is null\r\n\tat java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838)\r\n\tat java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\r\n\tat java.base/java.lang.Double.parseDouble(Double.java:651)\r\n\tat apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)\r\n\tat apiStepDefinition.BookManagementTest.i_send_a_put_request_with(BookManagementTest.java:61)\r\n\tat ✽.I send a PUT request to \"/books/{bookId}\" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:63)\r\n",
+              "duration": 997900,
+              "status": "failed"
+            },
+            "line": 63,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author"
+                ]
+              },
+              {
+                "cells": [
+                  "Alchemist 2.0",
+                  "Paulo Coelho"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 66,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21942500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:20.073Z",
+        "line": 69,
+        "name": "Update book with empty title",
+        "description": "",
+        "id": "update-an-existing-book;update-book-with-empty-title",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10973200,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "",
+                  "Paulo Coelho",
+                  "450.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c200\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:73)\r\n",
+              "status": "failed"
+            },
+            "line": 73,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21939000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:20.111Z",
+        "line": 76,
+        "name": "Update book with negative price",
+        "description": "",
+        "id": "update-an-existing-book;update-book-with-negative-price",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11970400,
+              "status": "passed"
+            },
+            "line": 77,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "Alchemist 2.0",
+                  "Paulo Coelho",
+                  "-100.0"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: \r\nExpected: is \u003c400\u003e\r\n     but: was \u003c200\u003e\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)\r\n\tat apiAssertions.JsonResponseAssertion.assertResponseCode(JsonResponseAssertion.java:14)\r\n\tat apiStepDefinition.BookManagementTest.the_response_status_should_be(BookManagementTest.java:73)\r\n\tat ✽.the response status should be 400(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:80)\r\n",
+              "status": "failed"
+            },
+            "line": 80,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 997900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the API is running",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.the_api_is_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a valid authentication token",
+            "match": {
+              "location": "apiStepDefinition.BookManagementTest.i_have_a_valid_authentication_token()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21938500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send a POST request to \"/books/\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/\"",
+                  "offset": 25
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_post_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "The Alchemist",
+                  "Paulo Coelho",
+                  "399.0"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-06-28T13:02:20.149Z",
+        "line": 83,
+        "name": "Update book with non-numeric price",
+        "description": "",
+        "id": "update-an-existing-book;update-book-with-non-numeric-price",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NumberFormatException: For input string: \"forty\"\r\n\tat java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)\r\n\tat java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\r\n\tat java.base/java.lang.Double.parseDouble(Double.java:651)\r\n\tat apiObjectRepository.ApiPage.getRequestBody(ApiPage.java:25)\r\n\tat apiStepDefinition.BookManagementTest.i_send_a_put_request_with(BookManagementTest.java:61)\r\n\tat ✽.I send a PUT request to \"/books/{bookId}\" with:(file:///C:/Projects/bookstore-api/bookstore-api/src/test/resources/features/Regression/UpdateBook.feature:84)\r\n",
+              "duration": 997500,
+              "status": "failed"
+            },
+            "line": 84,
+            "name": "I send a PUT request to \"/books/{bookId}\" with:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/books/{bookId}\"",
+                  "offset": 24
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.i_send_a_put_request_with(java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "author",
+                  "price"
+                ]
+              },
+              {
+                "cells": [
+                  "Alchemist 2.0",
+                  "Paulo Coelho",
+                  "forty"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 87,
+            "name": "the response status should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 30
+                }
+              ],
+              "location": "apiStepDefinition.BookManagementTest.the_response_status_should_be(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@updateBook"
+          },
+          {
+            "name": "@Negative"
+          }
+        ]
+      }
+    ],
+    "name": "Update an existing book",
+    "description": "",
+    "id": "update-an-existing-book",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Regression/UpdateBook.feature",
+    "tags": [
+      {
+        "name": "@regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@updateBook",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
