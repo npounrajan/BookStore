@@ -104,7 +104,7 @@ logging.level.org.springframework.web=DEBUG
 
 ## Cucumber Test Suite Documentation
 
-This project uses [Cucumber](https://cucumber.io/) for Behavior-Driven Development (BDD) API testing. Below is a detailed, file-wise explanation of how the Cucumber tests are structured and implemented.
+This project uses Cucumber for Behavior-Driven Development (BDD) API testing. Below is a detailed, file-wise explanation of how the Cucumber tests are structured and implemented.
 
 ---
 
@@ -112,7 +112,7 @@ This project uses [Cucumber](https://cucumber.io/) for Behavior-Driven Developme
 
 **Location:** `src/test/resources/features/`
 
-Feature files describe test scenarios in [Gherkin](https://cucumber.io/docs/gherkin/) syntax. Each file targets a specific aspect of the API:
+Feature files describe test scenarios in Gherkin syntax. Each file targets a specific aspect of the API:
 
 - **Smoke/Bookmanagement.feature**  
   End-to-end smoke tests for book management (create, read, update, delete).
@@ -204,28 +204,28 @@ The Cucumber test suite is modular, readable, and covers both functional and neg
 ---
 
 
-# 🧪 Test Strategy – Book Store API
+#  Test Strategy – Book Store API
 
-## 📘 Overview
+## Overview
 
 This document outlines the **test strategy** for validating the Book Store REST API through automated tests. The objective is to ensure that the API is functionally correct, robust, and reliable using **BDD**, **Java**, **RestAssured**, and **Cucumber**.
 
 ---
 
-## 🎯 Goals & Scope
+## Goals & Scope
 
-### ✅ Goals
+### Goals
 - Automate testing of all Book API endpoints (CRUD)
 - Validate both functional and non-functional requirements
 - Provide fast feedback through CI-ready, maintainable scripts
 
-### 🚫 Out of Scope
+### Out of Scope
 - UI testing
 - Performance and load testing (separate scope)
 
 ---
 
-## 📦 Test Types Covered
+## Test Types Covered
 
 | Test Type             | Description                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
@@ -237,18 +237,20 @@ This document outlines the **test strategy** for validating the Book Store REST 
 
 ---
 
-## 🔗 API Endpoints to Test
+##  API Endpoints to Test
 
-| Endpoint            | Methods      | Description              |
-|---------------------|--------------|--------------------------|
-| `/books/`           | POST, GET    | Create and fetch books   |
-| `/books/{bookId}`   | GET, PUT, DELETE | Retrieve, update, delete by ID |
+| Endpoint          | Methods    | Description                    |
+|-------------------|------------|--------------------------------|
+| `/books/`         | POST, GET  | Create and fetch books         |
+| `/signup`         | POST    | Create Users                   |
+| `/login`          | POST    | Fetch Users                    |
+| `/books/{bookId}` | GET, PUT, DELETE | Retrieve, update, delete by ID |
 
 ---
 
-## 🧩 Test Design
+## Test Design
 
-### 📘 Feature Files (Gherkin)
+### Feature Files (Gherkin)
 
 Organized by operation:
 - `CreateBook.feature`
@@ -256,59 +258,59 @@ Organized by operation:
 - `DeleteBook.feature`
 - `GetAllBooks.feature`
 - `Bookmanagement.feature` (smoke)
+- `UserAuthentication.feature`(smoke)
 
 Each feature file includes:
-- ✅ Positive Scenarios (happy paths)
-- ❌ Negative Scenarios (e.g., missing field, invalid format, duplicate entry)
+-  Positive Scenarios (happy paths)
+-  Negative Scenarios (e.g., missing field, invalid format, duplicate entry)
 
-### 🧪 Step Definitions
+###  Step Definitions
 
 Implemented in:
-- `BookManagementTest.java`
+- `BookManagementTest.java` & `UserAuthTest.java`
 - Uses RestAssured for request calls
 - Dynamic handling of IDs and test context
 
-### 🧰 Helpers
+### Helpers
 
 - `ApiPage.java`: Handles request building, path param replacement, malformed body simulation
 - `JsonResponseAssertion.java`: Centralized assertions for status codes and JSON fields
 
 ---
 
-## 📈 Test Execution
+## Test Execution
 
-### 🧪 Runners
+### Runners
 
 | Runner               | Tag        | Description                 |
 |----------------------|------------|-----------------------------|
 | `ApiSmokeRunner.java` | `@Smoke`   | Basic critical path tests   |
 | `ApiRegressionRunner.java` | `@Regression` | Full regression suite     |
 
-### 🔁 Failed Scenario Handling
+### Failed Scenario Handling
 - Failed scenarios saved in `failed.txt`
 - Can be rerun using `@Rerun`
 
 ---
 
-## 📊 Test Reporting
+## Test Reporting
 
 - HTML and JSON reports via **Cucumber Plugin**
 - Supports integration with CI dashboards
 
 ---
 
-## 🛠️ Environments
+## Environments
 
-| Environment | Base URI                  | Auth Required |
-|-------------|---------------------------|---------------|
-| Local       | `http://localhost:8080`   | ❌ No          |
-| Dev/Staging | `https://api.staging.bookstore.com` | ✅ Yes (Bearer) |
+| Environment | Base URI                            | Auth Required  |
+|-------------|-------------------------------------|----------------|
+| Local       | `http://localhost:8090`             | Yes            |
 
 Environment can be set using Maven profiles or environment variables.
 
 ---
 
-## 🔄 CI/CD Integration
+## CI/CD Integration
 
 - Tests triggered via GitHub Actions and Azure DevOps on every PR/Merge
 - Reports published as artifacts or notifications
@@ -316,7 +318,7 @@ Environment can be set using Maven profiles or environment variables.
 
 ---
 
-## ⚠️ Risks & Mitigations
+##  Risks & Mitigations
 
 | Risk                                | Mitigation                             |
 |-------------------------------------|----------------------------------------|
@@ -326,20 +328,20 @@ Environment can be set using Maven profiles or environment variables.
 
 ---
 
-## 📌 Assumptions
+## Assumptions
 
 - API is stateless and idempotent
 - Book ID can be reused between tests within the same execution context
 
 ---
 
-## ✅ Entry & Exit Criteria
+##  Entry & Exit Criteria
 
-### ✅ Entry
+###  Entry
 - API endpoint is accessible
 - API contract is finalized
 
-### ✅ Exit
+###  Exit
 - All smoke and regression scenarios pass
 - Reports generated and reviewed
 - No critical or blocker defects logged
