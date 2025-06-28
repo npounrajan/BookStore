@@ -1,7 +1,0 @@
-com\bookstore\model\User.class
-com\bookstore\BookstoreApiApplication.class
-com\bookstore\model\Book.class
-com\bookstore\controller\AuthController.class
-com\bookstore\service\UserService.class
-com\bookstore\service\BookService.class
-com\bookstore\controller\BookController.class
