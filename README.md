@@ -200,3 +200,148 @@ This file stores references to failed scenarios for easy rerun and debugging.
 ## Summary
 
 The Cucumber test suite is modular, readable, and covers both functional and negative testing for the Bookstore API, with clear separation between scenario definition, step implementation, API interaction,
+
+---
+
+
+# 🧪 Test Strategy – Book Store API
+
+## 📘 Overview
+
+This document outlines the **test strategy** for validating the Book Store REST API through automated tests. The objective is to ensure that the API is functionally correct, robust, and reliable using **BDD**, **Java**, **RestAssured**, and **Cucumber**.
+
+---
+
+## 🎯 Goals & Scope
+
+### ✅ Goals
+- Automate testing of all Book API endpoints (CRUD)
+- Validate both functional and non-functional requirements
+- Provide fast feedback through CI-ready, maintainable scripts
+
+### 🚫 Out of Scope
+- UI testing
+- Performance and load testing (separate scope)
+
+---
+
+## 📦 Test Types Covered
+
+| Test Type             | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| Smoke Tests           | Verify critical endpoints work (e.g., Create/Get Book)                      |
+| Regression Tests      | Validate full set of positive and negative flows                            |
+| Negative Testing      | Handle malformed requests, unsupported media types, validation errors       |
+| Data Validation       | Ensure response bodies match expected schema/values                         |
+| Authorization Checks  | Validate access is restricted if required (401 scenarios)                   |
+
+---
+
+## 🔗 API Endpoints to Test
+
+| Endpoint            | Methods      | Description              |
+|---------------------|--------------|--------------------------|
+| `/books/`           | POST, GET    | Create and fetch books   |
+| `/books/{bookId}`   | GET, PUT, DELETE | Retrieve, update, delete by ID |
+
+---
+
+## 🧩 Test Design
+
+### 📘 Feature Files (Gherkin)
+
+Organized by operation:
+- `CreateBook.feature`
+- `UpdateBook.feature`
+- `DeleteBook.feature`
+- `GetAllBooks.feature`
+- `Bookmanagement.feature` (smoke)
+
+Each feature file includes:
+- ✅ Positive Scenarios (happy paths)
+- ❌ Negative Scenarios (e.g., missing field, invalid format, duplicate entry)
+
+### 🧪 Step Definitions
+
+Implemented in:
+- `BookManagementTest.java`
+- Uses RestAssured for request calls
+- Dynamic handling of IDs and test context
+
+### 🧰 Helpers
+
+- `ApiPage.java`: Handles request building, path param replacement, malformed body simulation
+- `JsonResponseAssertion.java`: Centralized assertions for status codes and JSON fields
+
+---
+
+## 📈 Test Execution
+
+### 🧪 Runners
+
+| Runner               | Tag        | Description                 |
+|----------------------|------------|-----------------------------|
+| `ApiSmokeRunner.java` | `@Smoke`   | Basic critical path tests   |
+| `ApiRegressionRunner.java` | `@Regression` | Full regression suite     |
+
+### 🔁 Failed Scenario Handling
+- Failed scenarios saved in `failed.txt`
+- Can be rerun using `@Rerun`
+
+---
+
+## 📊 Test Reporting
+
+- HTML and JSON reports via **Cucumber Plugin**
+- Supports integration with CI dashboards
+
+---
+
+## 🛠️ Environments
+
+| Environment | Base URI                  | Auth Required |
+|-------------|---------------------------|---------------|
+| Local       | `http://localhost:8080`   | ❌ No          |
+| Dev/Staging | `https://api.staging.bookstore.com` | ✅ Yes (Bearer) |
+
+Environment can be set using Maven profiles or environment variables.
+
+---
+
+## 🔄 CI/CD Integration
+
+- Tests triggered via GitHub Actions and Azure DevOps on every PR/Merge
+- Reports published as artifacts or notifications
+- Rerun of failed tests as separate job (optional)
+
+---
+
+## ⚠️ Risks & Mitigations
+
+| Risk                                | Mitigation                             |
+|-------------------------------------|----------------------------------------|
+| Backend API schema changes          | JSON schema validation or contract testing |
+| Test data pollution                 | Use unique payloads or cleanup logic   |
+| Rate limits / throttling in staging | Add wait logic, use sandbox tokens     |
+
+---
+
+## 📌 Assumptions
+
+- API is stateless and idempotent
+- Book ID can be reused between tests within the same execution context
+
+---
+
+## ✅ Entry & Exit Criteria
+
+### ✅ Entry
+- API endpoint is accessible
+- API contract is finalized
+
+### ✅ Exit
+- All smoke and regression scenarios pass
+- Reports generated and reviewed
+- No critical or blocker defects logged
+
+---
