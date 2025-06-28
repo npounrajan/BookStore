@@ -1,4 +1,1 @@
-file:src/test/resources/features/Regression/CreateBook.feature:48:56:63:70:77:89:97
-file:src/test/resources/features/Regression/DeleteBook.feature:39
-file:src/test/resources/features/Regression/GetAllBooks.feature:21:37:42
-file:src/test/resources/features/Regression/UpdateBook.feature:48:55:62:69:76:83
+file:src/test/resources/features/Smoke/UserAuthentication.feature:12

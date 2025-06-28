@@ -8,17 +8,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 
 public class BookManagementTest {
@@ -37,6 +30,7 @@ public class BookManagementTest {
         this.apiPage = new ApiPage();
         this.jsonResponseAssertion = new JsonResponseAssertion();
     }
+
 
     @Given("the API is running")
     public void the_api_is_running() {

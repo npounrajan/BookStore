@@ -1,22 +1,26 @@
 package apiStepDefinition;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 
 public class UserAuthTest {
 
     private RequestSpecification request;
     private Response response;
     private Map<String, Object> requestBody = new HashMap<>();
+
 
     @Given("the user API is running")
     public void theUserAPIIsRunning() {
