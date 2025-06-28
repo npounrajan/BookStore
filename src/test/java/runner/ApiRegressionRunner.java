@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(features = "src/test/resources/features/Regression",
         glue = "apiStepDefinition",
-        plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json", "rerun:src/test/resources/projectFailedReport/failed-API-Report/failed.txt"},
+        plugin = {"pretty", "html:target/cucumber-html-report", "rerun:src/test/resources/projectFailedReport/failed-API-Report/failed.txt"},
         monochrome = true,
         tags = "@regression")
 
