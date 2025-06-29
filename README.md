@@ -92,6 +92,19 @@ Application properties are set in [`src/main/resources/application.properties`](
 server.port=8090
 logging.level.org.springframework.web=DEBUG
 ```
+## Tools 
+
+| Tool / Library      | Purpose                                              |
+|---------------------|------------------------------------------------------|
+| **Java**            | Programming language                                 |
+| **Spring Boot**     | Development framework                                |
+| **RestAssured**     | REST API testing library                             |
+| **JUnit**           | Test framework for execution and assertions          |
+| **Cucumber**        | BDD framework for defining feature files             |
+| **Extent Reports**  | Advanced test reporting and logging                  |
+| **Maven**           | Dependency and build management                      |
+| **Azure DevOps**    | Continuous Integration and Deployment                |
+| **Git**             | Version control                                      |
 
 ## Notes
 
