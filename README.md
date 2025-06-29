@@ -2,6 +2,48 @@
 
 A simple RESTful API for managing a bookstore, built with Spring Boot. Includes Cucumber-based API tests.
 
+
+## 📚 Table of Contents
+
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [API Endpoints](#api-endpoints)
+  - [Authentication](#authentication)
+  - [Books](#books)
+- [Running the Application](#running-the-application)
+- [Running Tests](#running-tests)
+- [Configuration](#configuration)
+- [Tools](#tools)
+- [Notes](#notes)
+- [Cucumber Test Suite Documentation](#cucumber-test-suite-documentation)
+  - [1. Feature Files (`.feature`)](#1-feature-files-feature)
+  - [2. Step Definitions](#2-step-definitions)
+  - [3. API Helper / Page Object](#3-api-helper--page-object)
+  - [4. Assertions](#4-assertions)
+  - [5. Test Runners](#5-test-runners)
+  - [6. Failed Test Report](#6-failed-test-report)
+- [How It All Works Together](#how-it-all-works-together)
+- [Example Test Flow](#example-test-flow)
+- [Summary](#summary)
+- [Test Strategy – Book Store API](#test-strategy--book-store-api)
+  - [Overview](#overview)
+  - [Goals & Scope](#goals--scope)
+  - [Test Types Covered](#test-types-covered)
+  - [API Endpoints to Test](#api-endpoints-to-test)
+  - [Test Design](#test-design)
+    - [Feature Files (Gherkin)](#feature-files-gherkin)
+    - [Step Definitions](#step-definitions)
+    - [Helpers](#helpers)
+  - [Test Execution](#test-execution)
+    - [Runners](#runners)
+    - [Failed Scenario Handling](#failed-scenario-handling)
+  - [Test Reporting](#test-reporting)
+  - [Environments](#environments)
+  - [CI/CD Integration](#cicd-integration)
+  - [Risks & Mitigations](#risks--mitigations)
+  - [Assumptions](#assumptions)
+  - [Entry & Exit Criteria](#entry--exit-criteria)
+
 ## Features
 
 - User signup and login (with dummy token)
