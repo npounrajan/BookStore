@@ -2,7 +2,6 @@
 
 A simple RESTful API for managing a bookstore, built with Spring Boot. Includes Cucumber-based API tests.
 
-
 ## 📚 Table of Contents
 
 - [Features](#features)
